@@ -1,4 +1,4 @@
-.welcomeclose{
+.closebutton{
     width: 16px; 
     height: 16px; 
     cursor: pointer; 
@@ -26,6 +26,27 @@
     margin-top: 8px;
 }
 
+.windowheader{
+    width: 100%; 
+    display: flex; 
+    align-items: center; 
+    cursor: grab; 
+    justify-content: space-between; 
+    margin-top: 8px;
+}
+
+.window{
+    border: solid; 
+    display: flex; 
+    flex-direction: column; 
+    border-radius: 18px; 
+    position: absolute; 
+    top: calc(50% - 240px); 
+    left: calc(50% - 260px);
+    backdrop-filter: blur(4px); 
+    background-color: rgb(160, 0, 0);
+}
+
 .welcome{
     border: solid; 
     display: flex; 
@@ -49,4 +70,26 @@ body{
     font-family: Noto Sans, sans-seriff; 
     background-image: url(./eclipse-bg.jpg); 
     background-size: cover;
+}
+
+.selected{
+    border: red;
+    border-width: 2rem;
+}
+
+.headerText{
+    margin: 0px; 
+    color: white; 
+    font-weight: 500;
+}
+
+.topbar{
+    position: absolute; 
+    width: 99%; 
+    display: flex; 
+    backdrop-filter: blur(10px); 
+    background-color: rgba(0, 0, 0, 0.125); 
+    color: white; 
+    justify-content: space-between; 
+    gap: 32px;
 }

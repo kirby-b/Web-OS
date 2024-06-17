@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <div style="position: absolute; width: 99%; display: flex; backdrop-filter: blur(10px); background-color: rgba(0, 0, 0, 0.125); color: white; justify-content: space-between; gap: 32px;">
+    <div style="position: absolute; width: 99%; display: flex; backdrop-filter: blur(10px); background-color: rgba(0, 0, 0, 0.125); color: white; justify-content: space-between; gap: 32px;" class="topbar" id="top">
         <p id="welcomeopen" class="welcomeopen">
             KirbyOS
         </p>
@@ -18,12 +18,29 @@
     <div id="welcome" class="welcome">
       <div id="welcomeheader" class="welcomeheader">
         <div style="width: 16px; margin-left: 6x; height: 16px;"></div>
-        <p style="margin: 0px; color: white; font-weight: 500">Welcome</p>
-        <div id="welcomeclose" class="welcomeclose"></div>
+        <p class="headerText">Welcome</p>
+        <div id="welcomeclose" class="closebutton"></div>
       </div>
-      <div style="background-color: white; margin: 6px; border-radius: 12px; width: 360px; padding: 16px;">
-        <h1 style="margin: 4px">kirbOS</h1>
-        <p style="margin: 4px">kirbyOS is an OS to answer the question. Who is Kirby-b</p>
+      <div style="background-color: white; margin: 6px; border-radius: 12px; width: 360px; padding: 5rem;">
+        <h1 style="margin: 4px;">kirbOS</h1>
+        <p style="margin: 8px; font-size: medium;">kirbyOS is an OS to answer the question. Who is the programmer who goes by the name: Kirby-b</p>
+      </div>
+    </div>
+    <div id="desktopApps" style="padding-top: 64px; padding-left: 16px; color:white;">
+      <div style="text-align: center; padding: 16px; filter: drop-shadow(0 0 8px black); width: fit-content">
+        <img src="./book.jpg" style="width: 64px; height: 64px; border-radius: 16px;">
+        <p style="margin: 0px; color: white; ">The Ancient Texts</p>
+      </div>
+    </div>
+
+    <div class="window" id="notes" style="display: none;">
+      <div class="windowheader" id="notesheader">
+        <div style="width: 16px; margin-right: 6x; height: 16px;"></div>
+        <p class="headerText">The Ancient Texts</p>
+        <div class="closebutton" id="notesclose"></div>
+      </div>
+      <div style="background-color: white; margin: 6px; border-radius: 12px; width: 520px; height: 480px; padding: 16px;">
+        <p>Very Interesting</p>
       </div>
     </div>
     <script src="script.js"></script>

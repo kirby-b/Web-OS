@@ -12,12 +12,39 @@ var welcomeScreenOpen = document.querySelector("#welcomeopen")
 
 var welcomeScreen = document.querySelector("#welcome")
 
-function closeWindow(element) {
-  element.style.display = "none"
+var selectedIcon = undefined
+
+var biggestIndex = 1;
+
+var notesScreen = document.querySelector("#notes")
+
+var notesScreenClose = document.querySelector("#notesclose")
+
+var topBar = document.querySelector("#top")
+
+function selectIcon(element) {
+  element.classList.add("selected");
+  selectedIcon = element
+} 
+
+function deselectIcon(element) {
+  element.classList.remove("selected");
+  selectedIcon = undefined
 }
 
-function openWindow(element) {
-  element.style.display = "flex"
+function handleIconTap(element) {
+  if (element.classList.contains("selected")) {
+    deselectIcon(element)
+    openWindow(window)
+  } else {
+    selectIcon(element)
+  }
+}
+
+function addWindowTapHandling(element) {
+  element.addEventListener("mousedown", () =>
+    handleWindowTap(element)
+  )
 }
 
 welcomeScreenClose.addEventListener("click", function() {
@@ -28,9 +55,25 @@ welcomeScreenOpen.addEventListener("click", function() {
     openWindow(welcomeScreen);
 });
   
+notesScreenClose.addEventListener("click", () => closeWindow(notesScreen));
+
+function openWindow(element) {
+  element.style.display = "flex";
+  biggestIndex++;  // Increment biggestIndex by 1
+  element.style.zIndex = biggestIndex;
+  topBar.style.zIndex = biggestIndex + 1;
+}
+
+function handleWindowTap(element) {
+  biggestIndex++;  // Increment biggestIndex by 1
+  element.style.zIndex = biggestIndex;
+  topBar.style.zIndex = biggestIndex + 1;
+  deselectIcon(selectedIcon)
+}
 
 // Make the DIV element draggable:
 dragElement(document.getElementById("welcome"));
+dragElement(document.querySelector("#notes"))
 
 // Step 1: Define a function called `dragElement` that makes an HTML element draggable.
 function dragElement(element) {
