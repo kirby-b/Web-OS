@@ -20,26 +20,9 @@ var notesScreen = document.querySelector("#notes")
 
 var notesScreenClose = document.querySelector("#notesclose")
 
+var notesScreenOpen = document.querySelector("#notesopen")
+
 var topBar = document.querySelector("#top")
-
-function selectIcon(element) {
-  element.classList.add("selected");
-  selectedIcon = element
-} 
-
-function deselectIcon(element) {
-  element.classList.remove("selected");
-  selectedIcon = undefined
-}
-
-function handleIconTap(element) {
-  if (element.classList.contains("selected")) {
-    deselectIcon(element)
-    openWindow(window)
-  } else {
-    selectIcon(element)
-  }
-}
 
 function addWindowTapHandling(element) {
   element.addEventListener("mousedown", () =>
@@ -55,10 +38,17 @@ welcomeScreenOpen.addEventListener("click", function() {
     openWindow(welcomeScreen);
 });
   
-notesScreenClose.addEventListener("click", () => closeWindow(notesScreen));
+notesScreenClose.addEventListener("click", function() {
+    closeWindow(notesScreen);
+});
+
+notesScreenOpen.addEventListener("click", function() {
+    openWindow(notesScreen);
+});
 
 function openWindow(element) {
   element.style.display = "flex";
+  addWindowTapHandling(element);
   biggestIndex++;  // Increment biggestIndex by 1
   element.style.zIndex = biggestIndex;
   topBar.style.zIndex = biggestIndex + 1;
@@ -68,7 +58,10 @@ function handleWindowTap(element) {
   biggestIndex++;  // Increment biggestIndex by 1
   element.style.zIndex = biggestIndex;
   topBar.style.zIndex = biggestIndex + 1;
-  deselectIcon(selectedIcon)
+}
+
+function closeWindow(element) {
+  element.style.display = "none"
 }
 
 // Make the DIV element draggable:
