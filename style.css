@@ -11,7 +11,7 @@
 .welcomeopen{
     margin-left: 16px; 
     font-weight: 700; 
-    background-color: rgba(256, 256, 256, 0.125); 
+    background-color: rgb(180, 60, 5); 
     padding: 4px 12px; 
     border-radius: 16px; 
     cursor: pointer;
@@ -61,7 +61,7 @@
 
 .imLate{
     margin-right: 16px; 
-    background-color: rgba(256, 256, 256, 0.125); 
+    background-color: rgb(180, 60, 5); 
     padding: 4px 12px; 
     border-radius: 16px;
 }
