@@ -1,7 +1,7 @@
 function updateTime(){
     var whatYearIsIt = new Date().toLocaleString();
     var theTime = document.querySelector("#imLate");
-    theTime.innerHTML = whatYearIsIt
+    theTime.innerHTML = whatYearIsIt + " &#9203"
   }
 
 setInterval(updateTime, 1000);
