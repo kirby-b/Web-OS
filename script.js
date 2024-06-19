@@ -22,6 +22,12 @@ var notesScreenClose = document.querySelector("#notesclose")
 
 var notesScreenOpen = document.querySelector("#notesopen")
 
+var calcScreen = document.querySelector("#calc")
+
+var calcScreenClose = document.querySelector("#calcclose")
+
+var calcScreenOpen = document.querySelector("#calcopen")
+
 var topBar = document.querySelector("#top")
 
 function addWindowTapHandling(element) {
@@ -44,6 +50,14 @@ notesScreenClose.addEventListener("click", function() {
 
 notesScreenOpen.addEventListener("click", function() {
     openWindow(notesScreen);
+});
+
+calcScreenClose.addEventListener("click", function() {
+  closeWindow(calcScreen);
+});
+
+calcScreenOpen.addEventListener("click", function() {
+  openWindow(calcScreen);
 });
 
 function openWindow(element) {
@@ -117,5 +131,15 @@ function dragElement(element) {
   function stopDragging() {
     document.onmouseup = null;
     document.onmousemove = null;
+  }
+}
+
+function calculator(){
+  var answer = 0
+  function get_equation(){
+    // This will get an input stream from the buttons or something
+  }
+  function evaluate(equation){
+    // This will take the equation and split it into numbers and symbols, from there it will calculate it.
   }
 }

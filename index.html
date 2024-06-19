@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <div style="position: absolute; width: 99%; display: flex; backdrop-filter: blur(10px); background-color: rgba(0, 0, 0, 0.125); color: white; justify-content: space-between; gap: 32px;" class="topbar" id="top">
+    <div class="topbar" id="top">
         <p id="welcomeopen" class="welcomeopen">
             KirbyOS
         </p>
@@ -26,10 +26,14 @@
         <p style="margin: 8px; font-size: medium;">kirbyOS is an OS to answer the question: Who is the programmer who goes by the name Kirby-b?</p>
       </div>
     </div>
-    <div id="desktopApps" style="padding-top: 64px; padding-left: 16px; color:white;">
+    <div id="desktopApps" style="padding-top: 64px; padding-left: 16px; color:white; display: flex; align-items: center;">
       <div style="text-align: center; padding: 16px; filter: drop-shadow(0 0 8px black); width: fit-content; cursor:pointer;" id="notesopen">
         <img src="./book.jpg" style="width: 64px; height: 64px; border-radius: 16px;">
         <p style="margin: 0px; color: white;">The Ancient Texts</p>
+      </div>
+      <div style="text-align: center; padding: 16px; filter: drop-shadow(0 0 8px black); width: fit-content; cursor:pointer;" id="calcopen">
+        <img src="./calculator.jpg" style="width: 64px; height: 64px; border-radius: 16px;">
+        <p style="margin: 0px; color: white;">Calculator</p>
       </div>
     </div>
 
@@ -61,6 +65,20 @@
           front of him do tasks that sound much simpler on paper. He hopes all of the skills he learns with some day pay off and he can be come successful in the industry he loves
           so much.
         </p>
+      </div>
+    </div>
+    <div class="window" id="calc"  style="display: none;">
+      <div class="windowheader" id="calcheader">
+        <div style="width: 16px; margin-right: 6x; height: 16px;"></div>
+        <p class="headerText">Calculator</p>
+        <div class="closebutton" id="calcclose"></div>
+      </div>
+      <div style="background-color: grey; margin: 6px; border-radius: 12px; width: 260px; height: 460px; padding: 16px; overflow: auto;">
+        <div style="width: 99%; display: flex; justify-content: space-between; gap: 3rem; align-items: center; padding-top: 2rem; padding-bottom: 2rem; background-color: white; margin-bottom: 1rem;"><p style="font-size: large;" id="answerbox"></p><p style="font-size: large;" id="questionbox"></p></div>
+        <div style="width: 99%; display: flex; justify-content: space-between; gap: 2rem; align-items: center;"><div class="button" id="btn0">0</div><div class="button" id="btn1">1</div><div class="button" id="btn2">2</div><div class="button" id="btn3">3</div></div>
+        <div style="width: 99%; display: flex; justify-content: space-between; gap: 2rem; align-items: center;"><div class="button" id="btn4">4</div><div class="button" id="btn5">5</div><div class="button" id="btn6">6</div><div class="button" id="btnplus">+</div></div>
+        <div style="width: 99%; display: flex; justify-content: space-between; gap: 2rem; align-items: center;"><div class="button" id="btn7">7</div><div class="button" id="btn8">8</div><div class="button" id="btn9">9</div><div class="button" id="btnminus">-</div></div>
+        <div style="width: 99%; display: flex; gap: 2rem; align-items: center;"><div class="button" id="btnmult">*</div><div class="button" style="padding: 0.8rem;" id="btndivide">/</div><div class="button" style="padding: 0.6rem;" id="btnmod">%</div><div class="button" style="padding: 0.6rem;" id="btnequals">=</div></div>
       </div>
     </div>
     <script src="script.js"></script>
